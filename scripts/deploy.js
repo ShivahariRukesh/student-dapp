@@ -1,7 +1,6 @@
 const { ethers } = require("hardhat");
 const path = require("path");
 
-//Create the directory(if it doesn't exist) to add the contract artifact's file and its address in the two different files
 function saveFilesInFrontend(contract_address){
     const fs = require('fs');
     const contractsDir = path.join(__dirname,"..",

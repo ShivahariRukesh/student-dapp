@@ -47,9 +47,11 @@ const {ethereum} = window;
   ,[])
   return (
 
-  <div className="h-[80vh] text-white">
-{theme}
+  <div className="h-[80vh] text-white bg-black">
+<button className="w-[20%] bg-gray-300 text-gray-700 ml-[40%] p-2 mt-4  border-red-200 rounded-t-xl  hover:bg-red-400 hover:text-white hover:p-3  transition-colors duration-[850ms]">
+
   <Link href={"/admitStudent"}>Click Here To Admit Student</Link>
+</button>
   <ViewStudentList/>
   </div>
 

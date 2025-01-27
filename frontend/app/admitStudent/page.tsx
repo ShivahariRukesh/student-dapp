@@ -22,7 +22,7 @@ console.log(new1)
   return (
     <div className='h-[80vh]'>
  
-        <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4 bg-gray-400 shadow-md rounded-lg hover:bg-red-400 transition-colors duration-[450ms]">
+        <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4 bg-gray-400 shadow-md rounded-lg hover:bg-red-400 transition-colors duration-[450ms] mt-10">
             <div className="mb-4">
                 <label className="block text-gray-700 font-bold mb-2">Name:</label>
                 <input

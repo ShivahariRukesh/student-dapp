@@ -35,11 +35,8 @@ new1();
 },[currentState])
    return (
     <>
-    <div className='text-white'>ViewStudentList:
-{String( userAddress)}
 
-    </div>
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-6">
+    <div className="h-[80vh] flex flex-col items-center p-6 bg-gray-600">
       <div className="bg-white p-6 rounded-xl shadow-lg w-full max-w-4xl">
         <h1 className="text-3xl font-semibold text-center mb-6">Student List</h1>
 
