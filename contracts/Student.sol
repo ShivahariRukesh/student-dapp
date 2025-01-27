@@ -15,7 +15,7 @@ contract Student{
     }
 
     StudentStruct[] public students;
- 
+ uint public tt=6;
 
     function registerStudent(string memory _name, uint _rollno, bool _isMale, uint _class) public {
 
@@ -31,5 +31,11 @@ students.push(StudentStruct({
 
     function getAllStudent() public view returns(StudentStruct[] memory){
 return students;
+    }
+    
+        function getName() public pure returns(string memory){
+// return students[0].name;
+return "rem";
+
     }
 }

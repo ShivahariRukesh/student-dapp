@@ -7,24 +7,15 @@ import ContractAddress from '@/contracts/contract-address.json';
 import StudentContract from '@/contracts/Student.json';
 import { StudentProvider, StudentContext} from '@/app/context/StudentContext';
 
-interface StateType {
-  provider: ethers.BrowserProvider | null;
-  signer: any | null;
-  contract: ethers.Contract | null;
-}
+
 const studentContractAddress= ContractAddress.Calculator;
 const contractAbi = StudentContract.abi; 
 const HARDHAT_NETWORK_ID = "31337";
  function Content() {
 
-  const {theme} = useContext(StudentContext);
-  const [currentState, setCurrentState] = useState<StateType>({
-    provider: null,
-    signer: null,
-    contract: null,
-  });
+  const {theme,setUserAddress,setCurrentState} = useContext(StudentContext)!;
 
-  const [userAddress, setUserAddress] = useState<string | null>(null);
+
   const [accounts, setAccounts] = useState("None");
 
   useEffect(()=>{
@@ -38,7 +29,7 @@ const {ethereum} = window;
         const provider = new ethers.BrowserProvider(ethereum);
 
         const signer = await provider.getSigner();
-        console.log(signer)
+      
 
         const contract = new ethers.Contract(
           studentContractAddress,
@@ -56,10 +47,9 @@ const {ethereum} = window;
   ,[])
   return (
 
-  <div className="h-[80vh]">
+  <div className="h-[80vh] text-white">
 {theme}
   <Link href={"/admitStudent"}>Click Here To Admit Student</Link>
-
   <ViewStudentList/>
   </div>
 
@@ -69,9 +59,7 @@ const {ethereum} = window;
 
 export default function Home(){
   return(
-    <StudentProvider>
-<Content/>
-</StudentProvider>
+ <Content/>
 
   )
 }
