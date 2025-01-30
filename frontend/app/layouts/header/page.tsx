@@ -9,7 +9,7 @@ const Header = () => {
       </div>
 
       <div className="hidden md:flex space-x-8">
-        <Link href={"/"} className="text-xl mt-2  border-black rounded-t-xl  hover:text-gray-200 hover:bg-black p-4 transition-colors">Home</Link>
+        <Link href={"/"} className="text-xl font-extrabold mt-1 text-black  border-x-2 px-2  hover:text-gray-200 hover:bg-black transition-colors duration-[500ms]">Home</Link>
 
        
 
