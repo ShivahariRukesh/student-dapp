@@ -14,6 +14,7 @@ interface Student {
 const ViewStudentList = () => {
   const {userAddress,currentState} = useContext(StudentContext)!;
   const [studentsList,setStudentsList] = useState<Student[]>([]);
+  const [searchValue,setSearchValue] = useState<string>();
 useEffect(()=>{
 
 
@@ -33,13 +34,29 @@ setStudentsList(res)
 }
 new1();
 },[currentState])
+
+function searchHandler(){
+const filteredStudentList = studentsList.filter((item)=>{
+  item.name==searchValue
+})
+
+setStudentsList(filteredStudentList);
+}
    return (
     <>
 
     <div className="h-[80vh] flex flex-col items-center p-6 bg-gray-600">
       <div className="bg-white p-6 rounded-xl shadow-lg w-full max-w-4xl">
-        <h1 className="text-3xl font-semibold text-center mb-6">Student List</h1>
+       <div className='flex justify-between text-black'>
 
+        <h1 className="text-3xl font-semibold text-center mb-6">Student List</h1>
+<div>
+  <input type="search" className='bg-gray-600 border-2 border-black text-white' onChange={(e)=>{setSearchValue(e.target.value)}}/>
+ <button onClick={searchHandler}>
+   Search
+  </button>
+  </div>
+       </div>
   
         <div className="overflow-x-auto">
           <table className="min-w-full table-auto">
